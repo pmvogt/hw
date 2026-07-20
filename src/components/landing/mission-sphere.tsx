@@ -119,7 +119,7 @@ function Scene({
       <pointLight position={[4, 3, 5]} intensity={2.4} color="#e8a020" />
       <pointLight position={[-4, -2, -3]} intensity={0.55} color="#8899aa" />
 
-      <group scale={compact ? 0.8 : 0.9} position={[0, compact ? -0.32 : -0.48, 0]}>
+      <group scale={compact ? 0.8 : 0.96} position={[0, compact ? -0.28 : 0.08, 0]}>
         <Rotator reducedMotion={reducedMotion} staticMode={staticMode}>
           <ConnectorGlobe reducedMotion={reducedMotion || staticMode} />
           <HarnessHub />
@@ -154,7 +154,7 @@ function ResponsiveCamera({ compact }: { compact: boolean }) {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(0, compact ? 0.05 : 0.1, compact ? 6.8 : 5.7);
+    camera.position.set(0, compact ? 0.05 : 0.22, compact ? 6.8 : 5.45);
     camera.updateProjectionMatrix();
   }, [camera, compact]);
 

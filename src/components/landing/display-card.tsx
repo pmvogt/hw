@@ -5,6 +5,9 @@ interface DisplayCardProps {
   size?: "sm" | "md";
   interactive?: boolean;
   onClick?: () => void;
+  /** Optional image shown above the title/body (globe orbit cards). */
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export function DisplayCard({
@@ -14,6 +17,8 @@ export function DisplayCard({
   size = "sm",
   interactive,
   onClick,
+  imageSrc,
+  imageAlt = "",
 }: DisplayCardProps) {
   const sizing =
     size === "sm"
@@ -22,11 +27,26 @@ export function DisplayCard({
 
   const titleSize = size === "sm" ? "0.625rem" : "0.75rem";
   const bodySize = size === "sm" ? "0.5625rem" : "0.6875rem";
+  const imageHeight = size === "sm" ? "h-[2.35rem]" : "h-[3rem]";
 
   const shared = `flex flex-col border border-white/90 bg-hw-card text-left text-[#f2f2f0] ${sizing} ${className ?? ""}`;
 
   const inner = (
     <>
+      {imageSrc ? (
+        <div
+          className={`relative mb-1 w-full shrink-0 overflow-hidden border border-white/20 bg-[#121212] ${imageHeight}`}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="absolute inset-0 h-full w-full object-cover"
+            draggable={false}
+            loading="lazy"
+          />
+        </div>
+      ) : null}
       <p
         className="font-[family-name:var(--font-geist-pixel-square)] leading-none tracking-[0.02em]"
         style={{ fontSize: titleSize }}

@@ -18,12 +18,12 @@ export function BrandFooter() {
         </p>
       </div>
 
-      <div className="relative h-[clamp(2.75rem,10.5vh,7.25rem)] w-[clamp(2.5rem,9.5vh,7rem)] shrink-0">
+      <div className="relative h-[1.4rem] w-[1.25rem] shrink-0 sm:h-[clamp(2.75rem,10.5vh,7.25rem)] sm:w-[clamp(2.5rem,9.5vh,7rem)]">
         <Image
           src="/figma/emblem.png"
           alt="Hardwire mark"
           fill
-          sizes="121px"
+          sizes="(max-width: 639px) 28px, 121px"
           className="object-contain object-right"
           priority
         />

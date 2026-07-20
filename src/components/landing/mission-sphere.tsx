@@ -6,6 +6,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { DoubleSide, type Group } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { ConnectorGlobe } from "./connector-globe";
+import { HarnessHub } from "./harness-hub";
 import { OrbitCardMarker } from "./orbit-card-marker";
 import {
   CARD_RADIUS,
@@ -28,7 +29,7 @@ function Rotator({
   useFrame((_, delta) => {
     if (!group.current || reducedMotion || staticMode) return;
     group.current.rotation.y += delta * 0.12;
-    group.current.rotation.x = 0.1 + Math.sin(performance.now() * 0.0002) * 0.04;
+    group.current.rotation.x = 0.06 + Math.sin(performance.now() * 0.0002) * 0.03;
   });
 
   return <group ref={group}>{children}</group>;
@@ -118,9 +119,10 @@ function Scene({
       <pointLight position={[4, 3, 5]} intensity={2.4} color="#e8a020" />
       <pointLight position={[-4, -2, -3]} intensity={0.55} color="#8899aa" />
 
-      <group scale={compact ? 0.84 : 1}>
+      <group scale={compact ? 0.8 : 0.9} position={[0, compact ? -0.32 : -0.48, 0]}>
         <Rotator reducedMotion={reducedMotion} staticMode={staticMode}>
           <ConnectorGlobe reducedMotion={reducedMotion || staticMode} />
+          <HarnessHub />
           {ORBIT_CARDS.map((card) => (
             <OrbitCardMarker
               key={card.id}
@@ -152,7 +154,7 @@ function ResponsiveCamera({ compact }: { compact: boolean }) {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(0, compact ? 0.2 : 0.35, compact ? 6.6 : 5.4);
+    camera.position.set(0, compact ? 0.05 : 0.1, compact ? 6.8 : 5.7);
     camera.updateProjectionMatrix();
   }, [camera, compact]);
 

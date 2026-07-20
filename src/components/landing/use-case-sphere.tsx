@@ -52,8 +52,9 @@ export function UseCaseSphere({ open, onClose }: UseCaseSphereProps) {
                 FRIENDLY FLEET
               </h2>
               <p className="mt-3 max-w-[28ch] font-[family-name:var(--font-geist-mono)] text-[11px] leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] sm:text-[12px]">
-                The deployment layer in the field: robots, sensors, comms, power, compute, and
-                models assembled into one fleet that keeps working when cloud and grid drop out.
+                Our deployment methodology for building resilient physical AI systems. Friendly
+                Fleet brings robots, sensors, communications, and AI together into one operational
+                fleet.
               </p>
               <div className="mt-4 flex flex-wrap justify-center gap-1.5">
                 {["Comms", "Sensors", "Robots", "LLMs", "Power", "Compute"].map((tag) => (

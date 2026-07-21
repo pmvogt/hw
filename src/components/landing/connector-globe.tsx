@@ -87,9 +87,10 @@ function CoreEmblem({ reducedMotion }: { reducedMotion: boolean }) {
 
   useEffect(() => () => glowMap.dispose(), [glowMap]);
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!glowRef.current || reducedMotion) return;
-    const pulse = 0.96 + Math.sin(clock.elapsedTime * 1.1) * 0.04;
+    const t = performance.now() * 0.001;
+    const pulse = 0.96 + Math.sin(t * 1.1) * 0.04;
     glowRef.current.scale.setScalar(pulse);
   });
 

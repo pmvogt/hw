@@ -26,7 +26,7 @@ export default function RootLayout({
       lang="en"
       className={`${motorblock.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} h-full`}
     >
-      <body className="h-full overflow-hidden antialiased">{children}</body>
+      <body className="min-h-full antialiased">{children}</body>
     </html>
   );
 }

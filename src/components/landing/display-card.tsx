@@ -23,11 +23,9 @@ export function DisplayCard({
   const sizing =
     size === "sm"
       ? "w-[6.5rem] gap-0.5 px-1.5 py-1"
-      : "w-[8.75rem] gap-1 px-2.5 py-1.5";
+      : "w-[8.25rem] gap-1 px-2 py-1.5";
 
-  const titleSize = size === "sm" ? "0.625rem" : "0.75rem";
-  const bodySize = size === "sm" ? "0.5625rem" : "0.6875rem";
-  const imageHeight = size === "sm" ? "h-[2.35rem]" : "h-[3rem]";
+  const imageHeight = size === "sm" ? "h-[2.35rem]" : "h-[2.75rem]";
 
   const shared = `flex flex-col border border-white/90 bg-hw-card text-left text-[#f2f2f0] ${sizing} ${className ?? ""}`;
 
@@ -49,13 +47,13 @@ export function DisplayCard({
       ) : null}
       <p
         className="font-[family-name:var(--font-geist-pixel-square)] leading-none tracking-[0.02em]"
-        style={{ fontSize: titleSize }}
+        style={{ fontSize: "var(--text-card-title)" }}
       >
         {title}
       </p>
       <p
         className="font-[family-name:var(--font-geist-mono)] font-light leading-[1.15] tracking-[-0.01em] text-[#f2f2f0]/90"
-        style={{ fontSize: bodySize }}
+        style={{ fontSize: "var(--text-card-body)" }}
       >
         {body}
       </p>

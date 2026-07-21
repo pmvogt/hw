@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-21T18:31:09Z",
+  "title": "Design System: Hardwire",
+  "extensions": {
+    "colorMeta": {
+      "industrial-amber": {
+        "role": "primary",
+        "displayName": "Industrial Amber",
+        "canonical": "oklch(0.78 0.15 80)",
+        "tonalRamp": [
+          "#3d2a05",
+          "#6b4a0a",
+          "#9a6c10",
+          "#c48b16",
+          "#e8a020",
+          "#f0b84a",
+          "#f6d08a",
+          "#fbe9c8"
+        ]
+      },
+      "void-black": {
+        "role": "neutral",
+        "displayName": "Void Black",
+        "canonical": "oklch(0.12 0.005 80)",
+        "tonalRamp": [
+          "#050505",
+          "#0c0c0c",
+          "#161616",
+          "#242424",
+          "#3a3a3a",
+          "#6a6a6a",
+          "#a8a8a8",
+          "#f2f2f0"
+        ]
+      },
+      "console-card": {
+        "role": "neutral",
+        "displayName": "Console Card",
+        "canonical": "oklch(0.15 0.005 80)",
+        "tonalRamp": [
+          "#050505",
+          "#0c0c0c",
+          "#141414",
+          "#1c1c1c",
+          "#2a2a2a",
+          "#4a4a4a",
+          "#8a8a8a",
+          "#f2f2f0"
+        ]
+      },
+      "machine-ink": {
+        "role": "neutral",
+        "displayName": "Machine Ink",
+        "canonical": "oklch(0.14 0.005 80)",
+        "tonalRamp": [
+          "#0a0a0a",
+          "#121212",
+          "#1a1a1a",
+          "#2a2a2a",
+          "#3f3f3f",
+          "#6f6f6f",
+          "#afafaf",
+          "#f2f2f0"
+        ]
+      },
+      "phosphor-white": {
+        "role": "neutral",
+        "displayName": "Phosphor White",
+        "canonical": "oklch(0.96 0.005 100)",
+        "tonalRamp": [
+          "#1a1a18",
+          "#3a3a36",
+          "#6a6a64",
+          "#9a9a94",
+          "#c4c4be",
+          "#e0e0da",
+          "#f2f2f0",
+          "#fafaf8"
+        ]
+      },
+      "border-hard": {
+        "role": "neutral",
+        "displayName": "Border Hard",
+        "canonical": "#f2f2f0",
+        "tonalRamp": [
+          "#f2f2f033",
+          "#f2f2f055",
+          "#f2f2f077",
+          "#f2f2f099",
+          "#f2f2f0bb",
+          "#f2f2f0dd",
+          "#f2f2f0",
+          "#ffffff"
+        ]
+      },
+      "border-muted": {
+        "role": "neutral",
+        "displayName": "Border Muted",
+        "canonical": "#ffffff66",
+        "tonalRamp": [
+          "#ffffff1a",
+          "#ffffff33",
+          "#ffffff4d",
+          "#ffffff66",
+          "#ffffff80",
+          "#ffffff99",
+          "#ffffffb3",
+          "#ffffffcc"
+        ]
+      },
+      "amber-soft": {
+        "role": "primary",
+        "displayName": "Amber Soft",
+        "canonical": "#e8a02090",
+        "tonalRamp": [
+          "#e8a02022",
+          "#e8a02044",
+          "#e8a02066",
+          "#e8a02090",
+          "#e8a020aa",
+          "#e8a020cc",
+          "#e8a020ee",
+          "#e8a020"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "HARDWIRE brand lockup on the amber bar. Hero-level only."
+      },
+      "tagline": {
+        "displayName": "Tagline",
+        "purpose": "Locked product line above the brand bar."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Summary section titles below the fold."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Compact HUD titles on orbit cards and consoles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Supporting mono copy; keep measures tight (~52ch)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked micro labels and status metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "acquire-hub",
+        "value": "0 0 14px oklch(0.72 0.16 75 / 0.35)",
+        "purpose": "Harness hub presence on the globe."
+      },
+      {
+        "name": "console-active",
+        "value": "0 0 18px rgba(232,160,32,0.25)",
+        "purpose": "Active mission console feedback."
+      },
+      {
+        "name": "mission-overlay",
+        "value": "0 0 80px rgba(232,160,32,0.22)",
+        "purpose": "Friendly Fleet sphere overlay only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-expo-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Primary entrance and settle easing."
+      },
+      {
+        "name": "ease-radar-sweep",
+        "value": "cubic-bezier(0.55, 0, 0.2, 1)",
+        "purpose": "Radar sweep rotation."
+      },
+      {
+        "name": "globe-spin",
+        "value": "48s linear infinite",
+        "purpose": "Wireframe globe rotation; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Display Card",
+      "kind": "card",
+      "refersTo": "display-card",
+      "description": "Orbit HUD instrument card: hard border, console fill, pixel title + mono body.",
+      "html": "<div class=\"ds-display-card\"><p class=\"ds-display-card-title\">ROBOTICS</p><p class=\"ds-display-card-body\">Boston Dynamics</p></div>",
+      "css": ".ds-display-card { display: flex; flex-direction: column; gap: 2px; width: 6.5rem; padding: 4px 6px; background: var(--hw-card, #0c0c0c); color: #f2f2f0; border: 1px solid rgba(242,242,240,0.9); border-radius: 0; text-align: left; } .ds-display-card-title { margin: 0; font-family: var(--font-geist-pixel-square), monospace; font-size: 0.6875rem; letter-spacing: 0.02em; line-height: 1; } .ds-display-card-body { margin: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.5625rem; font-weight: 300; letter-spacing: -0.01em; line-height: 1.15; color: rgba(242,242,240,0.9); } .ds-display-card:focus-visible { outline: 2px solid #e8a020; outline-offset: 2px; }"
+    },
+    {
+      "name": "Mission Console",
+      "kind": "button",
+      "refersTo": "mission-console",
+      "description": "Edge-docked use-case trigger; bleeds off the right viewport edge.",
+      "html": "<button class=\"ds-mission-console\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-mission-meta\">USE CASE · 01</span><span class=\"ds-mission-title\">FRIENDLY FLEET</span><span class=\"ds-mission-status\"><span class=\"ds-mission-dot\"></span>STANDBY</span></button>",
+      "css": ".ds-mission-console { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-height: 44px; padding: 8px 16px 8px 12px; background: rgba(0,0,0,0.7); color: #f2f2f0; border: 1px solid rgba(255,255,255,0.4); border-right: 0; border-radius: 0; text-align: left; cursor: pointer; transition: border-color 0.2s, opacity 0.2s, box-shadow 0.2s; opacity: 0.75; } .ds-mission-console:hover { border-color: #e8a020; opacity: 1; } .ds-mission-console[aria-pressed=\"true\"] { border-color: #e8a020; opacity: 1; box-shadow: 0 0 18px rgba(232,160,32,0.25); } .ds-mission-console:focus-visible { outline: 2px solid #e8a020; outline-offset: 2px; } .ds-mission-meta { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.5625rem; letter-spacing: 0.18em; color: rgba(242,242,240,0.6); } .ds-mission-title { font-family: var(--font-geist-pixel-square), monospace; font-size: 0.75rem; letter-spacing: 0.05em; } .ds-mission-status { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.5625rem; letter-spacing: 0.14em; color: rgba(232,160,32,0.9); } .ds-mission-dot { width: 6px; height: 6px; border-radius: 9999px; background: #e8a020; }"
+    },
+    {
+      "name": "Brand Bar",
+      "kind": "nav",
+      "refersTo": "brand-bar",
+      "description": "Industrial amber drench with Motorblock wordmark and geometric emblem.",
+      "html": "<footer class=\"ds-brand-bar\"><span class=\"ds-brand-wordmark\">HARDWIRE</span><span class=\"ds-brand-mark\" aria-hidden=\"true\"></span></footer>",
+      "css": ".ds-brand-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 0.875rem clamp(1rem, 2.24vw, 2.6875rem); background: var(--hw-orange, #e8a020); color: var(--hw-ink, #0a0a0a); border-radius: 0; } .ds-brand-wordmark { font-family: var(--font-motorblock), sans-serif; font-size: clamp(2rem, 2.8vw + 1rem, 3.5rem); line-height: 0.88; letter-spacing: 0.01em; } .ds-brand-mark { display: block; width: 2rem; height: 2.25rem; background: #0a0a0a; clip-path: polygon(50% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%); }"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "Hard-edged capability tag for mission overlays.",
+      "html": "<span class=\"ds-status-chip\">Comms</span>",
+      "css": ".ds-status-chip { display: inline-block; padding: 2px 6px; background: rgba(0,0,0,0.35); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.35); border-radius: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.5625rem; letter-spacing: 0.06em; }"
+    },
+    {
+      "name": "Harness Hub",
+      "kind": "custom",
+      "refersTo": "display-card",
+      "description": "Center aggregation mark on the globe: amber field, ink emblem, acquire glow.",
+      "html": "<div class=\"ds-harness-hub\" aria-hidden=\"true\"><span class=\"ds-harness-hub-inner\"></span></div>",
+      "css": ".ds-harness-hub { display: flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; background: var(--hw-orange, #e8a020); border: 1px solid var(--hw-ink, #0a0a0a); border-radius: 0; box-shadow: 0 0 14px oklch(0.72 0.16 75 / 0.35); } .ds-harness-hub-inner { width: 0.7rem; height: 0.85rem; background: #0a0a0a; clip-path: polygon(50% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Deployment HUD",
+    "overview": "Hardwire's visual system is a soft-launch investor surface that must read in seconds as mission-grade physical AI infrastructure, not a product brochure. The page behaves like an operations console: black stage, instrumented density, industrial amber as the only saturated signal. Typography is pixel + mono instrumentation paired with a sharp Motorblock wordmark. Every surface should feel bolted on, evidence-first, and closer to Anduril / Palantir / defense-industrial systems than consumer SaaS.\n\nDensity is intentional. Prefer tight groupings and precise spacing over airy marketing whitespace. The amber brand bar is a committed drench at the base of the first viewport; the stage above stays void-black and instrumental. Depth comes from hard borders and tonal layering (void → console card → phosphor text), not soft shadows or glass stacks. Amber glow is reserved for acquire, focus, and active console states.\n\nThis system explicitly rejects soft SaaS marketing (purple gradients, rounded card grids, friendly illustrations), neon cyberpunk / Matrix cosplay, editorial magazine / Klim-specimen landing aesthetics, \"AI wrapper\" consumer product pages, and playful startup whimsy (emojis, pill clusters, stat strips in the hero).",
+    "keyCharacteristics": [
+      "Industrial amber drench on the brand bar; void-black stage everywhere else",
+      "Hard edges (0 radius) on cards, bars, and chips; full borders, never soft chrome",
+      "Motorblock wordmark + Geist Pixel Square titles + Geist Mono body/labels",
+      "HUD density: compact orbit cards, edge-docked console, tight section rhythm",
+      "Flat / tonal elevation; amber glow only as operational feedback"
+    ],
+    "rules": [
+      {
+        "name": "The Amber Signal Rule",
+        "body": "Industrial amber is identity on the brand bar and a sparse operational signal on the black stage. Never wash large dark regions in amber gradients or purple-indigo substitutes.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Pure Black/White Rule",
+        "body": "Prefer void black and phosphor white over #000 / #fff for large surfaces and body text. Selection may use mixed amber; UI chrome may use white opacity for borders only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brand-First Rule",
+        "body": "On the first viewport, HARDWIRE must remain a hero-level signal. No headline may overpower the wordmark or amber bar.",
+        "section": "typography"
+      },
+      {
+        "name": "The Instrumentation Rule",
+        "body": "Prefer Pixel Square + Mono for UI chrome. Do not introduce Inter, Roboto, or editorial serifs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces rest flat. If a shadow appears without an active or focus state, remove it.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the first viewport as one composition: brand, tagline, amber drench, and the globe stage.",
+      "Do use industrial amber as the committed identity color on the brand bar and as sparse HUD signals above it.",
+      "Do use hard edges (0 radius) and full borders on cards and consoles.",
+      "Do set body/label type in Geist Mono and titles in Geist Pixel Square; reserve Motorblock for HARDWIRE / mission display.",
+      "Do respect prefers-reduced-motion for globe spin, ripple, and radar choreography.",
+      "Do keep summary copy sparse, exact, and evidence-first (defense-industrial voice)."
+    ],
+    "donts": [
+      "Don't use soft SaaS marketing: purple gradients, rounded card grids, or friendly illustrations.",
+      "Don't drift into neon cyberpunk / Matrix cosplay.",
+      "Don't adopt editorial magazine / Klim-specimen landing aesthetics (display serif + hairline rules as the brand).",
+      "Don't ship \"AI wrapper\" consumer product page patterns.",
+      "Don't add playful startup whimsy: emojis, pill clusters, or stat strips in the hero.",
+      "Don't place detached badges, promo stickers, or callout chips on top of hero media.",
+      "Don't use side-stripe borders (border-left / border-right >1px) as a colored accent pattern; use full borders or leading numerals.",
+      "Don't use gradient text, glassmorphism stacks, or multi-layer marketing shadows.",
+      "Don't shrink the mobile emblem below ~2rem height or inflate the mobile brand bar with unnecessary vh padding."
+    ]
+  }
+}

@@ -12,9 +12,12 @@ export function RippleBackground() {
           draggable={false}
         />
       </div>
+      <div className="hw-radar-glow" />
       <div className="hw-radar-pulse" />
       <div className="hw-radar-pulse hw-radar-pulse-echo" />
+      <div className="hw-radar-pulse hw-radar-pulse-late" />
       <div className="hw-radar-sweep" />
+      <div className="hw-radar-scanline" />
     </div>
   );
 }

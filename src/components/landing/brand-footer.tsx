@@ -1,33 +1,30 @@
 import Image from "next/image";
+import { BrandTagline } from "./brand-tagline";
 
 export function BrandFooter() {
   return (
-    <footer className="relative z-20 flex h-[min(18.15vh,196px)] min-h-[96px] w-full shrink-0 items-center justify-between gap-[var(--space-lg)] bg-hw-orange px-[clamp(1rem,2.24vw,2.6875rem)] py-[clamp(0.75rem,2.2vh,2.5rem)]">
-      <div className="flex min-w-0 flex-col justify-center gap-[var(--space-3xs)]">
+    <div className="relative z-20 w-full shrink-0">
+      <BrandTagline />
+
+      <footer className="flex w-full items-center justify-between gap-[var(--space-md)] bg-hw-orange px-[var(--page-inline)] py-[0.875rem] sm:h-[min(14vh,148px)] sm:min-h-[6.5rem] sm:gap-[var(--space-lg)] sm:py-[clamp(0.85rem,1.8vh,1.75rem)]">
         <h1
-          className="font-[family-name:var(--font-motorblock)] leading-[0.88] tracking-[0.01em] text-hw-ink"
+          className="hw-wordmark-in min-w-0 font-[family-name:var(--font-motorblock)] leading-[0.88] tracking-[0.01em] text-hw-ink"
           style={{ fontSize: "var(--text-wordmark)" }}
         >
           HARDWIRE
         </h1>
-        <p
-          className="max-w-[42ch] font-[family-name:var(--font-geist-mono)] font-normal leading-none tracking-[-0.01em] text-hw-ink"
-          style={{ fontSize: "var(--text-tagline)" }}
-        >
-          The harness for physical, real-world AI.
-        </p>
-      </div>
 
-      <div className="relative h-[1.4rem] w-[1.25rem] shrink-0 sm:h-[clamp(2.75rem,10.5vh,7.25rem)] sm:w-[clamp(2.5rem,9.5vh,7rem)]">
-        <Image
-          src="/figma/emblem.png"
-          alt="Hardwire mark"
-          fill
-          sizes="(max-width: 639px) 28px, 121px"
-          className="object-contain object-right"
-          priority
-        />
-      </div>
-    </footer>
+        <div className="hw-mark-in relative h-[2.25rem] w-[2rem] shrink-0 sm:h-[clamp(2.5rem,8vh,5.5rem)] sm:w-[clamp(2.25rem,7vh,5rem)]">
+          <Image
+            src="/figma/emblem.png"
+            alt="Hardwire mark"
+            fill
+            sizes="(max-width: 639px) 36px, 96px"
+            className="object-contain object-right"
+            priority
+          />
+        </div>
+      </footer>
+    </div>
   );
 }

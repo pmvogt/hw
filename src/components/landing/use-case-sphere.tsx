@@ -47,11 +47,15 @@ export function UseCaseSphere({ open, onClose }: UseCaseSphereProps) {
             <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center sm:px-12">
               <h2
                 id="mission-title"
-                className="font-[family-name:var(--font-motorblock)] text-[clamp(1.6rem,5vw,2.6rem)] leading-none text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]"
+                className="font-[family-name:var(--font-motorblock)] leading-none text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]"
+                style={{ fontSize: "var(--text-mission-title)" }}
               >
                 FRIENDLY FLEET
               </h2>
-              <p className="mt-3 max-w-[28ch] font-[family-name:var(--font-geist-mono)] text-[11px] leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] sm:text-[12px]">
+              <p
+                className="mt-3 max-w-[28ch] font-[family-name:var(--font-geist-mono)] leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]"
+                style={{ fontSize: "var(--text-card-body)" }}
+              >
                 Our deployment methodology for building resilient physical AI systems. Friendly
                 Fleet brings robots, sensors, communications, and AI together into one operational
                 fleet.
@@ -60,7 +64,8 @@ export function UseCaseSphere({ open, onClose }: UseCaseSphereProps) {
                 {["Comms", "Sensors", "Robots", "LLMs", "Power", "Compute"].map((tag) => (
                   <span
                     key={tag}
-                    className="border border-white/35 bg-black/35 px-1.5 py-0.5 font-[family-name:var(--font-geist-mono)] text-[9px] tracking-[0.06em] text-white/85 backdrop-blur-[2px]"
+                    className="border border-white/35 bg-black/35 px-1.5 py-0.5 font-[family-name:var(--font-geist-mono)] tracking-[0.06em] text-white/85 backdrop-blur-[2px]"
+                    style={{ fontSize: "var(--text-micro)" }}
                   >
                     {tag}
                   </span>
@@ -69,7 +74,8 @@ export function UseCaseSphere({ open, onClose }: UseCaseSphereProps) {
               <button
                 type="button"
                 onClick={onClose}
-                className="mt-5 border border-white/55 bg-black/40 px-3 py-1.5 font-[family-name:var(--font-geist-mono)] text-[10px] tracking-[0.14em] text-white backdrop-blur-[2px] hover:border-[#e8a020] hover:text-[#e8a020]"
+                className="mt-5 border border-white/55 bg-black/40 px-3 py-1.5 font-[family-name:var(--font-geist-mono)] tracking-[0.14em] text-white backdrop-blur-[2px] hover:border-[#e8a020] hover:text-[#e8a020]"
+                style={{ fontSize: "var(--text-micro)" }}
               >
                 CLOSE
               </button>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { DisplayCard } from "./display-card";
+import { MissionConsole } from "./mission-console";
 import { MissionSphere } from "./mission-sphere";
 import { RippleBackground } from "./ripple-background";
 import { UseCaseSphere } from "./use-case-sphere";
@@ -31,19 +31,11 @@ export function LandingStage() {
 
       <UseCaseSphere open={useCaseOpen} onClose={() => setUseCaseOpen(false)} />
 
-      {/* Docked use-case card — fixed corner, not on the orbit */}
-      <div className="absolute right-3 top-3 z-30 sm:right-6 sm:top-6">
-        <DisplayCard
-          title="Use case"
-          body="Friendly fleet"
-          size="md"
-          interactive
-          onClick={() => setUseCaseOpen((open) => !open)}
-          className={
-            useCaseOpen
-              ? "ring-1 ring-[#e8a020] shadow-[0_0_20px_rgba(232,160,32,0.3)] max-sm:!w-[7.5rem]"
-              : "hover:border-[#e8a020] max-sm:!w-[7.5rem]"
-          }
+      {/* Mission console — bolted to the right edge of the stage frame */}
+      <div className="absolute bottom-[12%] right-0 z-30 sm:bottom-[14%]">
+        <MissionConsole
+          active={useCaseOpen}
+          onToggle={() => setUseCaseOpen((open) => !open)}
         />
       </div>
     </section>
